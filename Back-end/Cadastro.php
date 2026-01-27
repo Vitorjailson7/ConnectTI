@@ -1,6 +1,4 @@
-
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-BR">
 <head>
          <!-- Se for PNG -->
@@ -14,14 +12,13 @@
 <div class="container mt-5 col-md-4">
     <h3 class="text-center mb-3">Criar Conta</h3>
 
-    <!-- Mensagem de sucesso ou erro -->
-    <?php if($mensagem) echo $mensagem; ?>
+ 
 
-    <form action="" method="POST" class="card p-4 shadow">
+    <form action="Backend.php" method="POST" class="card p-4 shadow">
         <input type="text" name="nome" class="form-control mb-3" placeholder="Seu nome" required>
         <input type="email" name="email" class="form-control mb-3" placeholder="Seu e-mail" required>
         <input type="password" name="senha" class="form-control mb-3" placeholder="Senha" required>
-        <input type="date" name="data_nascimento" class="form-control mb-3" placeholder="Data de Nascimento" required>
+        <input type="date" name="data_nascimento" class="form-control mb-3" required>
         <button class="btn btn-primary w-100">Cadastrar</button>
     </form>
 
@@ -32,6 +29,3 @@
 
 </body>
 </html>
-
-
-

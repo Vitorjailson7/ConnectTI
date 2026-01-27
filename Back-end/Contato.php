@@ -60,11 +60,11 @@ input:focus, textarea:focus {
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="trilhas.html">Trilhas</a></li>
-        <li class="nav-item"><a class="nav-link" href="pratique.html">Pratique</a></li>
-        <li class="nav-item"><a class="nav-link" href="comunidade.html">Comunidade</a></li>
-        <li class="nav-item"><a class="nav-link active" href="contato.html">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="trilhas.php">Trilhas</a></li>
+        <li class="nav-item"><a class="nav-link" href="pratique.php">Pratique</a></li>
+        <li class="nav-item"><a class="nav-link" href="comunidade.php">Comunidade</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contato.php">Contato</a></li>
       </ul>
     </div>
   </div>
@@ -252,10 +252,10 @@ textarea.form-control { resize:none; }
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-        <li class="nav-item"><a class="nav-link" href="trilhas.html">Trilhas</a></li>
-        <li class="nav-item"><a class="nav-link" href="pratique.html">Pratique</a></li>
-        <li class="nav-item"><a class="nav-link" href="comunidade.html">Comunidade</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.php">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="trilhas.php">Trilhas</a></li>
+        <li class="nav-item"><a class="nav-link" href="pratique.php">Pratique</a></li>
+        <li class="nav-item"><a class="nav-link" href="comunidade.php">Comunidade</a></li>
         <li class="nav-item"><a class="nav-link active" href="contato.php">Contato</a></li>
       </ul>
     </div>

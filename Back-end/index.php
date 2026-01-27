@@ -130,7 +130,7 @@ footer a:hover { text-decoration: underline; }
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
 <div class="container">
-    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
         <img src="Logo ConnectTI.png" alt="Logo ConnectTI" width="60" height="60" class="me-2">
         ConnectTI
     </a>
@@ -141,12 +141,12 @@ footer a:hover { text-decoration: underline; }
 
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-            <li class="nav-item"><a class="nav-link" href="trilhas.html">Trilhas</a></li>
-            <li class="nav-item"><a class="nav-link" href="pratique.html">Pratique</a></li>
-            <li class="nav-item"><a class="nav-link" href="comunidade.html">Comunidade</a></li>
-            <li class="nav-item"><a class="nav-link" href="conteudos.html">Conteúdos</a></li>
-            <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="trilhas.php">Trilhas</a></li>
+            <li class="nav-item"><a class="nav-link" href="pratique.php">Pratique</a></li>
+            <li class="nav-item"><a class="nav-link" href="comunidade.php">Comunidade</a></li>
+            <li class="nav-item"><a class="nav-link" href="conteudos.php">Conteúdos</a></li>
+            <li class="nav-item"><a class="nav-link" href="contato.php">Contato</a></li>
 
             <!-- Dark Mode Toggle -->
             <li class="nav-item ms-3">
@@ -242,23 +242,35 @@ footer a:hover { text-decoration: underline; }
 
 <!-- Área de Acesso -->
 <div class="container area-acesso my-5">
-<h2 class="section-title">Acesso Rápido</h2>
-<div class="row justify-content-center g-4">
+  <h2 class="section-title">Acesso Rápido</h2>
+
+  <div class="row justify-content-center g-4">
+
     <div class="col-md-4">
-        <div class="card card-acesso shadow p-4 text-center">
-            <h3 class="mb-3">Entrar</h3>
-            <p>Acesse sua conta e continue seus estudos.</p>
-            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Fazer Login</button>
-        </div>
+      <div class="card card-acesso shadow p-4 text-center">
+        <h3 class="mb-3">Entrar</h3>
+        <p>Acesse sua conta e continue seus estudos.</p>
+
+        <!-- LOGIN -->
+        <a href="login.php" class="btn btn-primary w-100">
+          Fazer Login
+        </a>
+      </div>
     </div>
+
     <div class="col-md-4">
-        <div class="card card-acesso shadow p-4 text-center">
-            <h3 class="mb-3">Criar Conta</h3>
-            <p>Não tem conta? Cadastre-se e comece agora.</p>
-            <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#loginModal">Cadastrar</button>
-        </div>
+      <div class="card card-acesso shadow p-4 text-center">
+        <h3 class="mb-3">Criar Conta</h3>
+        <p>Não tem conta? Cadastre-se e comece agora.</p>
+
+        <!-- CADASTRO -->
+        <a href="cadastro.php" class="btn btn-success w-100">
+          Cadastrar
+        </a>
+      </div>
     </div>
-</div>
+
+  </div>
 </div>
 
 
@@ -455,19 +467,31 @@ footer a:hover { text-decoration: underline; }
 
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
-<div class="modal-dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Login / Cadastro</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body text-center">
-            <button class="btn btn-primary w-100 mb-2" id="loginSimulate">Simular Login</button>
-            <button class="btn btn-success w-100" data-bs-dismiss="modal">Cadastrar</button>
-        </div>
+
+      <div class="modal-header">
+        <h5 class="modal-title">Login / Cadastro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body text-center">
+
+        <a href="login.php" class="btn btn-primary w-100 mb-2">
+          Fazer Login
+        </a>
+
+        <a href="cadastro.php" class="btn btn-success w-100">
+          Cadastrar
+        </a>
+
+      </div>
+
     </div>
+  </div>
 </div>
-</div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -515,7 +539,7 @@ profileForm.addEventListener('submit', (e) => {
 });
 
 // Simulate login
-document.getElementById('loginSimulate').addEventListener('click', () => {
+   /*document.getElementById('loginSimulate').addEventListener('click', () => {
     const avatarSrc = '/mnt/data/Logo ConnectTI.png';
     const nome = 'Aluno Teste';
     localStorage.setItem('avatar', avatarSrc);
@@ -524,6 +548,7 @@ document.getElementById('loginSimulate').addEventListener('click', () => {
     navUserName.textContent = nome;
     document.getElementById('loginModal').querySelector('.btn-close').click();
 });
+Removendo o simulador de login */
 
 // Logout
 document.getElementById('logoutBtn').addEventListener('click', () => {

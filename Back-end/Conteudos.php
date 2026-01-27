@@ -46,16 +46,16 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">ConnectaTI</a>
+    <a class="navbar-brand fw-bold" href="index.php">ConnectTI</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="conteudos.php">Início</a></li>
         <li class="nav-item"><a class="nav-link" href="#trilhas">Trilhas</a></li>
         <li class="nav-item"><a class="nav-link" href="#conteudos">Conteúdos</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="contato.php">Contato</a></li>
       </ul>
     </div>
   </div>
