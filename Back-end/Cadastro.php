@@ -34,7 +34,7 @@
                    placeholder="Seu e-mail">
 
             <input type="password"
-                   name="senha"
+                   name="senha_aluno"
                    class="form-control mb-3"
                    placeholder="Senha">
 
@@ -67,7 +67,7 @@
                    placeholder="Nome completo">
 
             <input type="password"
-                   name="seenha"
+                   name="senha_docente"
                    class="form-control mb-3"
                    placeholder="Senha">
 
