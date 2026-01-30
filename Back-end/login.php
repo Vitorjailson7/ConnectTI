@@ -12,7 +12,7 @@
 <div class="container mt-5 col-md-4">
     <h3 class="text-center mb-3">Entrar</h3>
 
-     <form action="Auth.php" method="POST" class="card p-4 shadow">
+    <form action="Auth.php" method="POST" class="card p-4 shadow">
         <input type="email" name="email" class="form-control mb-3" placeholder="E-mail" required>
         <input type="password" name="senha" class="form-control mb-3" placeholder="Senha" required>
         <button class="btn btn-success w-100">Login</button>
@@ -25,4 +25,3 @@
 
 </body>
 </html>
-

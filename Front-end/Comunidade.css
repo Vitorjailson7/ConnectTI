@@ -1,5 +1,5 @@
 body {
-    background: #0A0F1F;
+    background: #e3e4ea;
     color: #F5F7FA;
     font-family: Arial;
 }
@@ -10,7 +10,7 @@ body {
     text-align: center;
     color: white;
     font-size: 22px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 20px rgba(243, 241, 241, 0.4);
 }
 
 .community-container {
@@ -49,7 +49,7 @@ body {
 
 /* GLASS EFFECT */
 .glass {
-    background: rgba(255,255,255,0.05);
+    background: rgba(230, 224, 224, 0.05);
     backdrop-filter: blur(12px);
     border-radius: 15px;
     padding: 20px;
@@ -63,7 +63,7 @@ body {
 }
 
 .chat-body {
-    background: #1A1F2E;
+    background: #e9eaed;
     padding: 15px;
     height: 250px;
     overflow-y: auto;
@@ -72,14 +72,14 @@ body {
 }
 
 .msg {
-    background: #2A3042;
+    background: #eff1f7;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .msg.prof {
-    background: #0D6EFD;
+    background: #f0f2f5;
 }
 
 .chat-input {
@@ -120,7 +120,7 @@ body {
 }
 
 .profile {
-    background: #1A1F2E;
+    background: #e1e2e3;
     padding: 15px;
     border-radius: 12px;
     text-align: center;

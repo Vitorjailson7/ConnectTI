@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -130,8 +134,8 @@ footer a:hover { text-decoration: underline; }
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
 <div class="container">
-    <a class="navbar-brand d-flex align-items-center fw-bold" href="/index.php">
-        <img src="Logo ConnectTI.png" alt="Logo ConnectTI" width="60" height="60" class="me-2">
+    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
+        <img src="../img/Logo ConnectTI.png" alt="Logo ConnectTI" width="60" height="60" class="me-2">
         ConnectTI
     </a>
 
@@ -155,17 +159,28 @@ footer a:hover { text-decoration: underline; }
 
             <!-- Avatar Dropdown -->
             <li class="nav-item dropdown ms-3">
-                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userMenu" role="button" data-bs-toggle="dropdown">
-                    <img src="/mnt/data/Logo ConnectTI.png" class="avatar-img me-2" id="navAvatar" alt="Avatar">
-                    <span id="navUserName">Convidado</span>
+            <?php if (isset($_SESSION['nome'])): ?>
+                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                    <img src="../img/Logo ConnectTI.png" class="avatar-img me-2" alt="Avatar">
+                    <span><?php echo $_SESSION['nome']; ?></span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userMenu">
-                    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#profileModal"><i class="bi bi-person-circle me-2"></i>Meu Perfil</a></li>
-                    <li><a class="dropdown-item" href="configuracoes.html"><i class="bi bi-gear me-2"></i>Configurações</a></li>
-                    <li><a class="dropdown-item" href="painel.html"><i class="bi bi-speedometer2 me-2"></i>Painel</a></li>
+
+                <ul class="dropdown-menu dropdown-menu-end shadow">
+                    <li class="dropdown-item text-muted">
+                        Tipo: <?php echo ucfirst($_SESSION['tipo']); ?>
+                    </li>
+                    <li><a class="dropdown-item" href="painel.php">Painel</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item text-danger" href="#" id="logoutBtn"><i class="bi bi-box-arrow-right me-2"></i>Sair</a></li>
+                    <li>
+                        <a class="dropdown-item text-danger" href="logout.php">Sair</a>
+                    </li>
                 </ul>
+            <?php else: ?>
+                <a class="nav-link d-flex align-items-center" href="login.php">
+                    <img src="../img/Logo ConnectTI.png" class="avatar-img me-2" alt="Avatar">
+                    <span>Convidado</span>
+                </a>
+            <?php endif; ?>
             </li>
         </ul>
     </div>
@@ -450,7 +465,7 @@ footer a:hover { text-decoration: underline; }
         <div class="modal-body">
             <form id="profileForm">
                 <div class="mb-3 text-center">
-                    <img src="/mnt/data/Logo ConnectTI.png" id="profileAvatarPreview" class="avatar-img mb-2" style="width:100px;height:100px;">
+                    <img src="../img/Logo ConnectTI.png" id="profileAvatarPreview" class="avatar-img mb-2" style="width:100px;height:100px;">
                     <input class="form-control" type="file" id="profileAvatar" accept="image/*">
                     <button type="button" class="btn btn-danger btn-sm mt-2" id="removeAvatarBtn">Remover Foto</button>
                 </div>
@@ -492,8 +507,6 @@ footer a:hover { text-decoration: underline; }
 </div>
 
 
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 // Dark Mode
@@ -502,7 +515,7 @@ toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Profile Handling
+/*// Profile Handling
 const profileForm = document.getElementById('profileForm');
 const profileAvatar = document.getElementById('profileAvatar');
 const profileAvatarPreview = document.getElementById('profileAvatarPreview');
@@ -538,8 +551,8 @@ profileForm.addEventListener('submit', (e) => {
     bootstrap.Modal.getInstance(document.getElementById('profileModal')).hide();
 });
 
-// Simulate login
-   /*document.getElementById('loginSimulate').addEventListener('click', () => {
+// Simulate login (n precisa mais)
+document.getElementById('loginSimulate').addEventListener('click', () => {
     const avatarSrc = '/mnt/data/Logo ConnectTI.png';
     const nome = 'Aluno Teste';
     localStorage.setItem('avatar', avatarSrc);
@@ -548,7 +561,6 @@ profileForm.addEventListener('submit', (e) => {
     navUserName.textContent = nome;
     document.getElementById('loginModal').querySelector('.btn-close').click();
 });
-Removendo o simulador de login */
 
 // Logout
 document.getElementById('logoutBtn').addEventListener('click', () => {
@@ -556,7 +568,7 @@ document.getElementById('logoutBtn').addEventListener('click', () => {
     localStorage.removeItem('nome');
     navAvatar.src = '/mnt/data/Logo ConnectTI.png';
     navUserName.textContent = 'Convidado';
-});
+});*/
 </script>
 </body>
 </html>

@@ -13,21 +13,22 @@ $email = $_POST['email'] ?? '';
 $senha = $_POST['senha'] ?? '';
 
 /* ===============================
-   1️⃣ TENTA LOGIN COMO ALUNO
+   1️⃣ LOGIN COMO ALUNO
+   TABELA: Aluno
 ================================ */
 $sqlAluno = "SELECT * FROM Aluno WHERE email = '$email' LIMIT 1";
 $resultAluno = $conn->query($sqlAluno);
 
-if ($resultAluno && $resultAluno->num_rows > 0) {
+if ($resultAluno && $resultAluno->num_rows === 1) {
 
     $aluno = $resultAluno->fetch_assoc();
 
-    if (password_verify($senha, $aluno['senha'])) {
+    if (!empty($aluno['senha']) && password_verify($senha, $aluno['senha'])) {
 
-        $_SESSION['id']     = $aluno['id'];
-        $_SESSION['nome']   = $aluno['nome'];
-        $_SESSION['email']  = $aluno['email'];
-        $_SESSION['tipo']   = 'aluno';
+        $_SESSION['id']    = $aluno['id'];
+        $_SESSION['nome']  = $aluno['nome'];
+        $_SESSION['email'] = $aluno['email'];
+        $_SESSION['tipo']  = 'aluno';
 
         header("Location: painel.php");
         exit;
@@ -35,21 +36,22 @@ if ($resultAluno && $resultAluno->num_rows > 0) {
 }
 
 /* ===============================
-   2️⃣ TENTA LOGIN COMO DOCENTE
+   2️⃣ LOGIN COMO DOCENTE
+   TABELA: docentes
 ================================ */
 $sqlDocente = "SELECT * FROM docentes WHERE email_profissional = '$email' LIMIT 1";
 $resultDocente = $conn->query($sqlDocente);
 
-if ($resultDocente && $resultDocente->num_rows > 0) {
+if ($resultDocente && $resultDocente->num_rows === 1) {
 
     $docente = $resultDocente->fetch_assoc();
 
-    if (password_verify($senha, $docente['senha'])) {
+    if (!empty($docente['senha']) && password_verify($senha, $docente['senha'])) {
 
-        $_SESSION['id']     = $docente['id'];
-        $_SESSION['nome']   = $docente['nome_completo'];
-        $_SESSION['email']  = $docente['email_profissional'];
-        $_SESSION['tipo']   = 'docente';
+        $_SESSION['id']    = $docente['id'];
+        $_SESSION['nome']  = $docente['nome_completo'];
+        $_SESSION['email'] = $docente['email_profissional'];
+        $_SESSION['tipo']  = 'docente';
 
         header("Location: painel.php");
         exit;
@@ -57,7 +59,7 @@ if ($resultDocente && $resultDocente->num_rows > 0) {
 }
 
 /* ===============================
-   ERRO FINAL (SÓ SE NINGUÉM LOGAR)
+   ERRO FINAL
 ================================ */
 echo "
 <script>
